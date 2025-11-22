@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CineReview.Models.Media">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAFAAAAAAAAAAAAEAAAQIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Media.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CineReview.Models.Movie">
+    <Position X="12.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Movie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CineReview.Models.Review">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAAAAAAAAAAAAgAAAAAAEAAAAAAAAEAAAQ=</HashCode>
+      <FileName>Models\Review.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CineReview.Models.Serie">
+    <Position X="9.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Serie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CineReview.Models.SerieEpisode">
+    <Position X="10.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACIAAAAQAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SerieEpisode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CineReview.Models.SerieSeason">
+    <Position X="8.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAEAE=</HashCode>
+      <FileName>Models\SerieSeason.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CineReview.Models.User">
+    <Position X="5.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAACAAAAAAAAAAAAQAAAAAAAACAIAAAAAAAAA=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
