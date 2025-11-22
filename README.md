@@ -18,6 +18,11 @@ Este projeto demonstra a aplicação de conceitos de **Programação Orientada a
 
 ## 🏗️ Estrutura e Arquitetura
 
+Diagrama de Classes:
+
+<img width="880" height="598" alt="image" src="https://github.com/user-attachments/assets/970d6d39-7e34-4036-972a-2d060774555a" />
+
+
 O projeto utiliza uma estrutura limpa, focada em separar as responsabilidades e implementar o padrão DDD simplificado:
 
 1.  **Modelos (Domain):** Contém as entidades principais (`User`, `Review`, `Media`, `Movie`, `Serie`, etc.).
