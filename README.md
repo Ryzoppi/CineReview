@@ -16,10 +16,6 @@ favoritos.
 
 ## 🧱 Arquitetura do Projeto
 
-Diagrama de Classes:
-
-<img width="880" height="598" alt="image" src="https://github.com/user-attachments/assets/24854561-c199-4849-81fc-2cdd802b45e7" />
-
 O projeto segue uma arquitetura limpa com separação de camadas.
 
 ### Herança TPT
@@ -50,3 +46,11 @@ Rodar API:
 ``` bash
 dotnet run
 ```
+
+## Pesquisa de Mercado
+
+[Link de Acesso](https://docs.google.com/document/d/1BMCbuGBjwu5cxFLjEAYbzHM5Ujw0LStfoViAsKW_-ZA/edit?usp=sharing)
+
+## Diagrama de Classes
+
+<img width="880" height="598" alt="image" src="https://github.com/user-attachments/assets/24854561-c199-4849-81fc-2cdd802b45e7" />
