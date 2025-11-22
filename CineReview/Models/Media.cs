@@ -8,6 +8,6 @@
         public string Director { get; set; }
         public int ReleaseYear { get; set; }
 
-        public ICollection<Review> Reviews { get; set; }
+        public ICollection<Review>? Reviews { get; set; }
     }
 }

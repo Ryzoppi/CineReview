@@ -6,39 +6,39 @@ using CineReview.Services.Interfaces;
 
 namespace CineReview.Services
 {
-    public class MovieService : IMovieService
+    public class ReviewService : IReviewService
     {
-        private readonly IMovieRepository _repo;
+        private readonly IReviewRepository _repo;
         private readonly IMapper _mapper;
 
-        public MovieService(IMovieRepository repo, IMapper mapper)
+        public ReviewService(IReviewRepository repo, IMapper mapper)
         {
             _repo = repo;
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<MovieReadDto>> GetAllAsync()
+        public async Task<IEnumerable<ReviewReadDto>> GetAllAsync()
         {
-            var movies = await _repo.GetAllAsync();
-            return _mapper.Map<IEnumerable<MovieReadDto>>(movies);
+            var reviews = await _repo.GetAllAsync();
+            return _mapper.Map<IEnumerable<ReviewReadDto>>(reviews);
         }
 
-        public async Task<MovieReadDto> GetByIdAsync(int id)
+        public async Task<ReviewReadDto> GetByIdAsync(int id)
         {
-            var movie = await _repo.GetByIdAsync(id);
-            if (movie == null) return null;
-            return _mapper.Map<MovieReadDto>(movie);
+            var review = await _repo.GetByIdAsync(id);
+            if (review == null) return null;
+            return _mapper.Map<ReviewReadDto>(review);
         }
 
-        public async Task<MovieReadDto> CreateAsync(MovieCreateDto dto)
+        public async Task<ReviewReadDto> CreateAsync(ReviewCreateDto dto)
         {
-            var movie = _mapper.Map<Movie>(dto);
-            await _repo.AddAsync(movie);
+            var review = _mapper.Map<Review>(dto);
+            await _repo.AddAsync(review);
             if (!await _repo.SaveChangesAsync()) return null;
-            return _mapper.Map<MovieReadDto>(movie);
+            return _mapper.Map<ReviewReadDto>(review);
         }
 
-        public async Task<MovieReadDto> UpdateAsync(int id, MovieCreateDto dto)
+        public async Task<ReviewReadDto> UpdateAsync(int id, ReviewCreateDto dto)
         {
             var existing = await _repo.GetByIdAsync(id);
             if (existing == null) return null;
@@ -46,7 +46,7 @@ namespace CineReview.Services
             _mapper.Map(dto, existing);
             _repo.Update(existing);
             if (!await _repo.SaveChangesAsync()) return null;
-            return _mapper.Map<MovieReadDto>(existing);
+            return _mapper.Map<ReviewReadDto>(existing);
         }
 
         public async Task<bool> DeleteAsync(int id)

@@ -25,22 +25,22 @@ namespace CineReview.Services
             return _mapper.Map<IEnumerable<SerieReadDto>>(movies);
         }
 
-        public async Task<MovieReadDto> GetByIdAsync(int id)
+        public async Task<SerieReadDto> GetByIdAsync(int id)
         {
             var movie = await _repo.GetByIdAsync(id);
             if (movie == null) return null;
-            return _mapper.Map<MovieReadDto>(movie);
+            return _mapper.Map<SerieReadDto>(movie);
         }
 
-        public async Task<MovieReadDto> CreateAsync(MovieCreateDto dto)
+        public async Task<SerieReadDto> CreateAsync(SerieCreateDto dto)
         {
-            var movie = _mapper.Map<Movie>(dto);
-            await _repo.AddAsync(movie);
+            var serie = _mapper.Map<Serie>(dto);
+            await _repo.AddAsync(serie);
             if (!await _repo.SaveChangesAsync()) return null;
-            return _mapper.Map<MovieReadDto>(movie);
+            return _mapper.Map<SerieReadDto>(serie);
         }
 
-        public async Task<MovieReadDto> UpdateAsync(int id, MovieCreateDto dto)
+        public async Task<SerieReadDto> UpdateAsync(int id, SerieCreateDto dto)
         {
             var existing = await _repo.GetByIdAsync(id);
             if (existing == null) return null;
@@ -48,7 +48,7 @@ namespace CineReview.Services
             _mapper.Map(dto, existing);
             _repo.Update(existing);
             if (!await _repo.SaveChangesAsync()) return null;
-            return _mapper.Map<MovieReadDto>(existing);
+            return _mapper.Map<SerieReadDto>(existing);
         }
 
         public async Task<bool> DeleteAsync(int id)

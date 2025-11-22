@@ -18,7 +18,8 @@ namespace CineReview.Mapping
             CreateMap<SerieCreateDto, Serie>();
             CreateMap<Serie, SerieReadDto>();
 
-            // Series / Season / Episode mappings if needed
+            CreateMap<UserCreateDto, User>();
+            CreateMap<User, UserReadDto>();
         }
     }
 }

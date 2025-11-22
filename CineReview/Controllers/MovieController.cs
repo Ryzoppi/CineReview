@@ -1,6 +1,6 @@
-﻿using CineReview.Models;
+﻿using CineReview.DTOs;
+using CineReview.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,81 +10,90 @@ namespace CineReview.Controllers
     [ApiController]
     public class MovieController : ControllerBase
     {
-        static List<Movie> movies = new List<Movie>()
+        private readonly IMovieService _movieService;
+
+        public MovieController(IMovieService movieService)
         {
-            new Movie(){ Id=1, Name="Inception", Synopsis="a", Director="Christopher Nolan", ReleaseYear=2011, Duration= 210},
-            new Movie(){ Id=2, Name="The Matrix", Synopsis="b", Director="The Wachowskis", ReleaseYear=2012, Duration = 211},
-            new Movie(){ Id=3, Name="Interstellar", Synopsis="c", Director="Christopher Nolan", ReleaseYear = 2013, Duration = 212}
-        };
+            _movieService = movieService;
+        }
+
         // GET: api/<MovieController>
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            return Ok(movies);
+            var movieReadDto = await _movieService.GetAllAsync();
+            return Ok(movieReadDto);
         }
 
         // GET api/<MovieController>/5
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            var movie = movies.Find(x => x.Id == id);
-            if (movie == null)
+            var movieReadDto = await _movieService.GetByIdAsync(id);
+
+            if (movieReadDto == null)
             {
-                //return NotFound();
-                return NotFound(new { Message = $"Filme com Id={id} não encontrado." });
+                return NotFound(new { Message = $"Filme com Id={id} não encontrada." });
             }
-            return Ok(movie);
+            return Ok(movieReadDto);
         }
 
         // POST api/<MovieController>
         [HttpPost]
-        public IActionResult Post([FromBody] Movie newMovie)
+        public async Task<IActionResult> Post([FromBody] MovieCreateDto dto)
         {
-            if (newMovie == null)
+            if (dto == null)
                 return BadRequest("O corpo da requisição é inválido.");
 
-            if (movies.Any(x => x.Id == newMovie.Id))
-                return Conflict(new { Message = $"Já existe um filme com Id={newMovie.Id}." });
+            var movieReadDto = await _movieService.CreateAsync(dto);
 
-            movies.Add(newMovie);
-            return CreatedAtAction(nameof(Get), new { id = newMovie.Id }, newMovie);
+            if (movieReadDto == null)
+            {
+                return StatusCode(500, "Erro ao criar o filme no banco de dados.");
+            }
+
+            return CreatedAtAction(nameof(GetById), new { id = movieReadDto.Id }, movieReadDto);
         }
 
-        // PUT api/<UserController>/5
+        // PUT api/<MovieController>/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Movie updatedMovie)
+        public async Task<IActionResult> Put(int id, [FromBody] MovieCreateDto dto)
         {
-            if (updatedMovie == null)
+            if (dto == null)
                 return BadRequest("O corpo da requisição é inválido.");
 
-            var existing = movies.FirstOrDefault(x => x.Id == id);
-            if (existing == null)
-                return NotFound(new { Message = $"Filme com Id={id} não encontrado." });
+            var movieReadDto = await _movieService.UpdateAsync(id, dto);
 
-            // Atualiza o objeto existente (mantém o Id)
-            existing.Name = updatedMovie.Name;
-            existing.Synopsis = updatedMovie.Synopsis;
-            existing.Director = updatedMovie.Director;
-            existing.ReleaseYear = updatedMovie.ReleaseYear;
-            existing.Duration = updatedMovie.Duration;
-
-            return Ok(new
+            if (movieReadDto == null)
             {
-                Message = "Filme atualizado com sucesso.",
-                Updated = existing
-            });
-        } 
+                var existing = await _movieService.GetByIdAsync(id);
+                if (existing == null)
+                {
+                    return NotFound(new { Message = $"Filme com Id={id} não encontrada." });
+                }
+                return StatusCode(500, "Erro ao salvar as alterações do filme no banco de dados.");
+            }
 
-        // DELETE api/<UserController>/5
+            return Ok(movieReadDto);
+        }
+
+        // DELETE api/<MovieController>/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var movie = movies.FirstOrDefault(x => x.Id == id);
-            if (movie == null)
-                return NotFound(new { Message = $"Filme com Id={id} não encontrado." });
+            var success = await _movieService.DeleteAsync(id);
 
-            movies.Remove(movie);
-            return Ok(new { Message = $"Filme '{movie.Name}' removido com sucesso." });
+            if (!success)
+            {
+                var existing = await _movieService.GetByIdAsync(id);
+                if (existing == null)
+                {
+                    return NotFound(new { Message = $"Filme com Id={id} não encontrada." });
+                }
+                return StatusCode(500, "Erro ao deletar o filme no banco de dados.");
+            }
+
+            return Ok(new { Message = $"Filme com Id={id} removida com sucesso." });
         }
     }
 }

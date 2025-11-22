@@ -1,6 +1,6 @@
-﻿using CineReview.Models;
+﻿using CineReview.DTOs;
+using CineReview.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,78 +10,90 @@ namespace CineReview.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        static List<User> users = new List<User>
+        private readonly IUserService _userService;
+
+        public UserController(IUserService userService)
         {
-            new User { Id = 1, Name = "Alice", Email = "alice@test.com", Password = "password1" },
-        };
+            _userService = userService;
+        }
 
         // GET: api/<UserController>
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            return Ok(users);
+            var userReadDto = await _userService.GetAllAsync();
+            return Ok(userReadDto);
         }
 
         // GET api/<UserController>/5
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            var user = users.Find(x => x.Id == id);
-            if (user == null)
+            var userReadDto = await _userService.GetByIdAsync(id);
+
+            if (userReadDto == null)
             {
-                //return NotFound();
-                return NotFound(new { Message = $"Tarefa com Id={id} não encontrada." });
+                return NotFound(new { Message = $"Usuário com Id={id} não encontrada." });
             }
-            return Ok(user);
+            return Ok(userReadDto);
         }
 
         // POST api/<UserController>
         [HttpPost]
-        public IActionResult Post([FromBody] User newUser)
+        public async Task<IActionResult> Post([FromBody] UserCreateDto dto)
         {
-            if (newUser == null)
+            if (dto == null)
                 return BadRequest("O corpo da requisição é inválido.");
 
-            if (users.Any(x => x.Id == newUser.Id))
-                return Conflict(new { Message = $"Já existe um usuário com Id={newUser.Id}." });
+            var userReadDto = await _userService.CreateAsync(dto);
 
-            users.Add(newUser);
-            return CreatedAtAction(nameof(Get), new { id = newUser.Id }, newUser);
+            if (userReadDto == null)
+            {
+                return StatusCode(500, "Erro ao criar o usuário no banco de dados.");
+            }
+
+            return CreatedAtAction(nameof(GetById), new { id = userReadDto.Id }, userReadDto);
         }
 
         // PUT api/<UserController>/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] User updatedUser)
+        public async Task<IActionResult> Put(int id, [FromBody] UserCreateDto dto)
         {
-            if (updatedUser == null)
+            if (dto == null)
                 return BadRequest("O corpo da requisição é inválido.");
 
-            var existing = users.FirstOrDefault(x => x.Id == id);
-            if (existing == null)
-                return NotFound(new { Message = $"Usuário com Id={id} não encontrado." });
+            var userReadDto = await _userService.UpdateAsync(id, dto);
 
-            // Atualiza o objeto existente (mantém o Id)
-            existing.Name = updatedUser.Name;
-            existing.Email = updatedUser.Email;
-            existing.Password = updatedUser.Password;
-
-            return Ok(new
+            if (userReadDto == null)
             {
-                Message = "Usuário atualizado com sucesso.",
-                Updated = existing
-            });
+                var existing = await _userService.GetByIdAsync(id);
+                if (existing == null)
+                {
+                    return NotFound(new { Message = $"Usuário com Id={id} não encontrada." });
+                }
+                return StatusCode(500, "Erro ao salvar as alterações do usuário no banco de dados.");
+            }
+
+            return Ok(userReadDto);
         }
 
         // DELETE api/<UserController>/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var user = users.FirstOrDefault(x => x.Id == id);
-            if (user == null)
-                return NotFound(new { Message = $"Usuário com Id={id} não encontrado." });
+            var success = await _userService.DeleteAsync(id);
 
-            users.Remove(user);
-            return Ok(new { Message = $"Usuário '{user.Name}' removido com sucesso." });
+            if (!success)
+            {
+                var existing = await _userService.GetByIdAsync(id);
+                if (existing == null)
+                {
+                    return NotFound(new { Message = $"Usuário com Id={id} não encontrada." });
+                }
+                return StatusCode(500, "Erro ao deletar o usuário no banco de dados.");
+            }
+
+            return Ok(new { Message = $"Usuário com Id={id} removida com sucesso." });
         }
     }
 }

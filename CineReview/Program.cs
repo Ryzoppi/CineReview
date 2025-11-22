@@ -1,5 +1,9 @@
 using CineReview.Data;
 using CineReview.Mapping;
+using CineReview.Repositories;
+using CineReview.Repositories.Interfaces;
+using CineReview.Services;
+using CineReview.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace CineReview
@@ -15,7 +19,25 @@ namespace CineReview
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
-            builder.Services.AddDbContext<DataBaseContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+            builder.Services.AddDbContext<DataBaseContext>(options =>
+                options.UseMySql(connectionString,
+                                 ServerVersion.AutoDetect(connectionString)
+                                )
+            );
+
+            builder.Services.AddScoped<ISerieRepository, SerieRepository>();
+            builder.Services.AddScoped<ISerieService, SerieService>();
+
+            builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+            builder.Services.AddScoped<IMovieService, MovieService>();
+
+            builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
+            builder.Services.AddScoped<IReviewService, ReviewService>();
+
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IUserService, UserService>();
 
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

@@ -1,6 +1,6 @@
-﻿using CineReview.Models;
+﻿using CineReview.DTOs;
+using CineReview.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,81 +10,90 @@ namespace CineReview.Controllers
     [ApiController]
     public class ReviewController : ControllerBase
     {
-        static List<Review> series = new List<Review>()
+        private readonly IReviewService _reviewService;
+
+        public ReviewController(IReviewService reviewService)
         {
-            new Review(){ Id=1, },
-            new Review(){ Id=2, },
-            new Review(){ Id=3, }
-        };
-        // GET: api/<MovieController>
+            _reviewService = reviewService;
+        }
+
+        // GET: api/<ReviewController>
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            return Ok(series);
+            var reviewReadDto = await _reviewService.GetAllAsync();
+            return Ok(reviewReadDto);
         }
 
-        // GET api/<MovieController>/5
+        // GET api/<ReviewController>/5
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            var movie = series.Find(x => x.Id == id);
-            if (movie == null)
+            var reviewReadDto = await _reviewService.GetByIdAsync(id);
+
+            if (reviewReadDto == null)
             {
-                //return NotFound();
-                return NotFound(new { Message = $"Série com Id={id} não encontrada." });
+                return NotFound(new { Message = $"Review com Id={id} não encontrada." });
             }
-            return Ok(movie);
+            return Ok(reviewReadDto);
         }
 
-        // POST api/<MovieController>
+        // POST api/<ReviewController>
         [HttpPost]
-        public IActionResult Post([FromBody] Serie newSeries)
+        public async Task<IActionResult> Post([FromBody] ReviewCreateDto dto)
         {
-            if (newSeries == null)
+            if (dto == null)
                 return BadRequest("O corpo da requisição é inválido.");
 
-            if (series.Any(x => x.Id == newSeries.Id))
-                return Conflict(new { Message = $"Já existe uma série com Id={newSeries.Id}." });
+            var reviewReadDto = await _reviewService.CreateAsync(dto);
 
-            series.Add(newSeries);
-            return CreatedAtAction(nameof(Get), new { id = newSeries.Id }, newSeries);
-        }
-
-        // PUT api/<UserController>/5
-        [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Serie updatedSeries)
-        {
-            if (updatedSeries == null)
-                return BadRequest("O corpo da requisição é inválido.");
-
-            var existing = series.FirstOrDefault(x => x.Id == id);
-            if (existing == null)
-                return NotFound(new { Message = $"Série com Id={id} não encontrada." });
-
-            // Atualiza o objeto existente (mantém o Id)
-            existing.Name = updatedSeries.Name;
-            existing.Synopsis = updatedSeries.Synopsis;
-            existing.Director = updatedSeries.Director;
-            existing.ReleaseYear = updatedSeries.ReleaseYear;
-            existing.Seasons = updatedSeries.Seasons;
-
-            return Ok(new
+            if (reviewReadDto == null)
             {
-                Message = "Série atualizada com sucesso.",
-                Updated = existing
-            });
+                return StatusCode(500, "Erro ao criar a review no banco de dados.");
+            }
+
+            return CreatedAtAction(nameof(GetById), new { id = reviewReadDto.Id }, reviewReadDto);
         }
 
-        // DELETE api/<UserController>/5
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        // PUT api/<ReviewController>/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, [FromBody] ReviewCreateDto dto)
         {
-            var serie = series.FirstOrDefault(x => x.Id == id);
-            if (serie == null)
-                return NotFound(new { Message = $"Série com Id={id} não encontrada." });
+            if (dto == null)
+                return BadRequest("O corpo da requisição é inválido.");
 
-            series.Remove(serie);
-            return Ok(new { Message = $"Série '{serie.Name}' removida com sucesso." });
+            var reviewReadDto = await _reviewService.UpdateAsync(id, dto);
+
+            if (reviewReadDto == null)
+            {
+                var existing = await _reviewService.GetByIdAsync(id);
+                if (existing == null)
+                {
+                    return NotFound(new { Message = $"Review com Id={id} não encontrada." });
+                }
+                return StatusCode(500, "Erro ao salvar as alterações da review no banco de dados.");
+            }
+
+            return Ok(reviewReadDto);
+        }
+
+        // DELETE api/<ReviewController>/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var success = await _reviewService.DeleteAsync(id);
+
+            if (!success)
+            {
+                var existing = await _reviewService.GetByIdAsync(id);
+                if (existing == null)
+                {
+                    return NotFound(new { Message = $"Review com Id={id} não encontrada." });
+                }
+                return StatusCode(500, "Erro ao deletar a review no banco de dados.");
+            }
+
+            return Ok(new { Message = $"Review com Id={id} removida com sucesso." });
         }
     }
 }

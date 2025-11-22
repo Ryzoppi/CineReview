@@ -1,6 +1,6 @@
-﻿using CineReview.Models;
+﻿using CineReview.DTOs;
+using CineReview.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,81 +10,90 @@ namespace CineReview.Controllers
     [ApiController]
     public class SerieController : ControllerBase
     {
-        static List<Serie> series = new List<Serie>()
+        private readonly ISerieService _serieService;
+
+        public SerieController(ISerieService serieService)
         {
-            new Serie(){ Id=1, Name="serie1", Synopsis="a", Director="Christopher Nolan", ReleaseYear=2011},
-            new Serie(){ Id=2, Name="serie2", Synopsis="b", Director="The Wachowskis", ReleaseYear=2012},
-            new Serie(){ Id=3, Name="serie3", Synopsis="c", Director="Christopher Nolan", ReleaseYear=2013}
-        };
-        // GET: api/<MovieController>
-        [HttpGet]
-        public IActionResult Get()
-        {
-            return Ok(series);
+            _serieService = serieService;
         }
 
-        // GET api/<MovieController>/5
-        [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        // GET: api/<SerieController>
+        [HttpGet]
+        public async Task<IActionResult> Get()
         {
-            var movie = series.Find(x => x.Id == id);
-            if (movie == null)
+            var serieReadDto = await _serieService.GetAllAsync();
+            return Ok(serieReadDto);
+        }
+
+        // GET api/<SerieController>/5
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var serieReadDto = await _serieService.GetByIdAsync(id);
+
+            if (serieReadDto == null)
             {
-                //return NotFound();
                 return NotFound(new { Message = $"Série com Id={id} não encontrada." });
             }
-            return Ok(movie);
+            return Ok(serieReadDto);
         }
 
-        // POST api/<MovieController>
+        // POST api/<SerieController>
         [HttpPost]
-        public IActionResult Post([FromBody] Serie newSeries)
+        public async Task<IActionResult> Post([FromBody] SerieCreateDto dto)
         {
-            if (newSeries == null)
+            if (dto == null)
                 return BadRequest("O corpo da requisição é inválido.");
 
-            if (series.Any(x => x.Id == newSeries.Id))
-                return Conflict(new { Message = $"Já existe uma série com Id={newSeries.Id}." });
+            var serieReadDto = await _serieService.CreateAsync(dto);
 
-            series.Add(newSeries);
-            return CreatedAtAction(nameof(Get), new { id = newSeries.Id }, newSeries);
-        }
-
-        // PUT api/<UserController>/5
-        [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Serie updatedSeries)
-        {
-            if (updatedSeries == null)
-                return BadRequest("O corpo da requisição é inválido.");
-
-            var existing = series.FirstOrDefault(x => x.Id == id);
-            if (existing == null)
-                return NotFound(new { Message = $"Série com Id={id} não encontrada." });
-
-            // Atualiza o objeto existente (mantém o Id)
-            existing.Name = updatedSeries.Name;
-            existing.Synopsis = updatedSeries.Synopsis;
-            existing.Director = updatedSeries.Director;
-            existing.ReleaseYear = updatedSeries.ReleaseYear;
-            existing.Seasons = updatedSeries.Seasons;
-
-            return Ok(new
+            if (serieReadDto == null)
             {
-                Message = "Série atualizada com sucesso.",
-                Updated = existing
-            });
+                return StatusCode(500, "Erro ao criar a série no banco de dados.");
+            }
+
+            return CreatedAtAction(nameof(GetById), new { id = serieReadDto.Id }, serieReadDto);
         }
 
-        // DELETE api/<UserController>/5
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        // PUT api/<SerieController>/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, [FromBody] SerieCreateDto dto)
         {
-            var serie = series.FirstOrDefault(x => x.Id == id);
-            if (serie == null)
-                return NotFound(new { Message = $"Série com Id={id} não encontrada." });
+            if (dto == null)
+                return BadRequest("O corpo da requisição é inválido.");
 
-            series.Remove(serie);
-            return Ok(new { Message = $"Série '{serie.Name}' removida com sucesso." });
+            var serieReadDto = await _serieService.UpdateAsync(id, dto);
+
+            if (serieReadDto == null)
+            {
+                var existing = await _serieService.GetByIdAsync(id);
+                if (existing == null)
+                {
+                    return NotFound(new { Message = $"Série com Id={id} não encontrada." });
+                }
+                return StatusCode(500, "Erro ao salvar as alterações da série no banco de dados.");
+            }
+
+            return Ok(serieReadDto);
+        }
+
+        // DELETE api/<SerieController>/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var success = await _serieService.DeleteAsync(id);
+
+            if (!success)
+            {
+                var existing = await _serieService.GetByIdAsync(id);
+                if (existing == null)
+                {
+                    return NotFound(new { Message = $"Série com Id={id} não encontrada." });
+                }
+                return StatusCode(500, "Erro ao deletar a série no banco de dados.");
+            }
+
+            return Ok(new { Message = $"Série com Id={id} removida com sucesso." });
         }
     }
 }
