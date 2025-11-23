@@ -53,4 +53,5 @@ dotnet run
 
 ## Diagrama de Classes
 
-<img width="880" height="598" alt="image" src="https://github.com/user-attachments/assets/24854561-c199-4849-81fc-2cdd802b45e7" />
+<img width="863" height="388" alt="image" src="https://github.com/user-attachments/assets/30c012d2-804d-4e3e-82c1-9cbe89328f32" />
+
