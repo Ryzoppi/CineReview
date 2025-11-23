@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using CineReview.Data;
 using CineReview.Models;
 using CineReview.Repositories.Interfaces;
@@ -25,6 +23,49 @@ namespace CineReview.Repositories
         public void Remove(User user) => _ctx.Users.Remove(user);
 
         public async Task<bool> SaveChangesAsync() => (await _ctx.SaveChangesAsync()) > 0;
+        public async Task<IEnumerable<Media>> GetAllFavoritesAsync(int userId)
+        {
+            var user = await _ctx.Users
+                .Include(u => u.FavoriteList)
+                .FirstOrDefaultAsync(u => u.Id == userId);
+
+            return user?.FavoriteList;
+        }
+
+        public async Task<Media> AddToFavoritesAsync(int id, int mediaId)
+        {
+            var user = await _ctx.Users
+                .Include(u => u.FavoriteList)
+                .FirstOrDefaultAsync(u => u.Id == id);
+
+            if (user == null) return null;
+
+            var media = await _ctx.Media.FindAsync(mediaId);
+
+            user.FavoriteList.Add(media);
+            await _ctx.SaveChangesAsync();
+
+            return media;
+        }
+
+        public async Task<Media> RemoveFromFavoritesAsync(int id, int mediaId)
+        {
+            var user = await _ctx.Users
+                .Include(u => u.FavoriteList)
+                .FirstOrDefaultAsync(u => u.Id == id);
+
+            if (user == null) return null;
+
+            var media = user.FavoriteList.FirstOrDefault(m => m.Id == mediaId);
+
+            if (media != null)
+            {
+                user.FavoriteList.Remove(media);
+                await _ctx.SaveChangesAsync();
+            }
+
+            return media;
+        }
     }
 }
 

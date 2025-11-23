@@ -2,9 +2,6 @@
 using CineReview.Models;
 using CineReview.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace CineReview.Repositories
 {
@@ -13,8 +10,9 @@ namespace CineReview.Repositories
         private readonly DataBaseContext _ctx;
         public ReviewRepository(DataBaseContext ctx) => _ctx = ctx;
 
-        public async Task<IEnumerable<Review>> GetAllAsync()
-            => await _ctx.Reviews.ToListAsync();
+        public async Task<IEnumerable<Review>> GetAllByUserAsync(int userId)
+        => await _ctx.Reviews.Where(r => r.UserId == userId).Include(r => r.User).Include(r => r.Media).ToListAsync();
+        
 
         public async Task<Review> GetByIdAsync(int id)
             => await _ctx.Reviews.FindAsync(id);

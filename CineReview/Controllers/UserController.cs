@@ -95,5 +95,35 @@ namespace CineReview.Controllers
 
             return Ok(new { Message = $"Usuário com Id={id} removida com sucesso." });
         }
+
+        [HttpGet("{id}/favorites")]
+        public async Task<IActionResult> GetFavorites(int id) {
+            var mediaReadDto = await _userService.GetAllFavoritesAsync(id);
+            return Ok(mediaReadDto);
+        }
+
+        [HttpPost("{id}/favorites/{mediaId}")]
+        public async Task<IActionResult> AddFavorite(int id, int mediaId)
+        {
+            var mediaReadDto = await _userService.AddToFavoritesAsync(id, mediaId);
+            if (mediaReadDto == null)
+            {
+                return NotFound(new { Message = "Usuário ou Mídia não encontrado." });
+            }
+
+            return Ok(new { Message = "Mídia adicionado a lista de favoritos com sucesso." });
+        }
+
+        [HttpDelete("{id}/favorites/{mediaId}")]
+        public async Task<IActionResult> RemoveFavorite(int id, int mediaId)
+        {
+            var mediaReadDto = await _userService.RemoveFromFavoritesAsync(id, mediaId);
+            if (mediaReadDto == null)
+            {
+                return NotFound(new { Message = "Usuário ou Mídia não encontrado." });
+            }
+
+            return Ok(new { Message = "Mídia removida a lista de favoritos com sucesso." });
+        }
     }
 }

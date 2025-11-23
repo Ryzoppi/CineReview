@@ -9,5 +9,8 @@ namespace CineReview.Services.Interfaces
         Task<UserReadDto> CreateAsync(UserCreateDto dto);
         Task<UserReadDto> UpdateAsync(int id, UserCreateDto dto);
         Task<bool> DeleteAsync(int id);
+        Task<IEnumerable<MediaReadDto>> GetAllFavoritesAsync(int id);
+        Task<MediaReadDto> AddToFavoritesAsync(int id, int mediaId);
+        Task<MediaReadDto> RemoveFromFavoritesAsync(int id, int mediaId);
     }
 }

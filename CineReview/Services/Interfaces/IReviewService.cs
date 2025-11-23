@@ -6,7 +6,7 @@ namespace CineReview.Services.Interfaces
 {
     public interface IReviewService
     {
-        Task<IEnumerable<ReviewReadDto>> GetAllAsync();
+        Task<IEnumerable<ReviewReadDto>> GetAllByUserAsync(int userId);
         Task<ReviewReadDto> GetByIdAsync(int id);
         Task<ReviewReadDto> CreateAsync(ReviewCreateDto dto);
         Task<ReviewReadDto> UpdateAsync(int id, ReviewCreateDto dto);

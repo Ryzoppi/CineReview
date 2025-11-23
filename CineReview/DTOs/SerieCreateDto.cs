@@ -7,5 +7,6 @@
         public string Director { get; set; }
         public int ReleaseYear { get; set; }
         public int Seasons { get; set; }
+        public int Episodes { get; set; }
     }
 }

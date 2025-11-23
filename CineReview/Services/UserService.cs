@@ -3,6 +3,7 @@ using CineReview.DTOs;
 using CineReview.Models;
 using CineReview.Repositories.Interfaces;
 using CineReview.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace CineReview.Services
 {
@@ -55,6 +56,28 @@ namespace CineReview.Services
             if (existing == null) return false;
             _repo.Remove(existing);
             return await _repo.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<MediaReadDto>> GetAllFavoritesAsync(int id)
+        {
+            var favorites = await _repo.GetAllFavoritesAsync(id);
+            return _mapper.Map<IEnumerable<MediaReadDto>>(favorites);
+        }
+
+        public async Task<MediaReadDto> AddToFavoritesAsync(int id, int mediaId)
+        {
+            var media = await _repo.AddToFavoritesAsync(id, mediaId);
+            if (media == null) return null;
+
+            return _mapper.Map<MediaReadDto>(media);
+        }
+
+        public async Task<MediaReadDto> RemoveFromFavoritesAsync(int id, int mediaId)
+        {
+            var media = await _repo.RemoveFromFavoritesAsync(id, mediaId);
+            if (media == null) return null;
+
+            return _mapper.Map<MediaReadDto>(media);
         }
     }
 }

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CineReview.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20251122212255_initial")]
+    [Migration("20251123003732_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -80,54 +80,6 @@ namespace CineReview.Migrations
                     b.ToTable("Reviews");
                 });
 
-            modelBuilder.Entity("CineReview.Models.SerieEpisode", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("SeasonId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SeasonId");
-
-                    b.ToTable("SerieEpisodes");
-                });
-
-            modelBuilder.Entity("CineReview.Models.SerieSeason", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("SerieId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SerieId");
-
-                    b.ToTable("SerieSeasons");
-                });
-
             modelBuilder.Entity("CineReview.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -167,6 +119,12 @@ namespace CineReview.Migrations
                 {
                     b.HasBaseType("CineReview.Models.Media");
 
+                    b.Property<int>("Episodes")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Seasons")
+                        .HasColumnType("int");
+
                     b.ToTable("Series", (string)null);
                 });
 
@@ -196,28 +154,6 @@ namespace CineReview.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("CineReview.Models.SerieEpisode", b =>
-                {
-                    b.HasOne("CineReview.Models.SerieSeason", "Season")
-                        .WithMany("Episodes")
-                        .HasForeignKey("SeasonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Season");
-                });
-
-            modelBuilder.Entity("CineReview.Models.SerieSeason", b =>
-                {
-                    b.HasOne("CineReview.Models.Serie", "Serie")
-                        .WithMany("Seasons")
-                        .HasForeignKey("SerieId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Serie");
-                });
-
             modelBuilder.Entity("CineReview.Models.Movie", b =>
                 {
                     b.HasOne("CineReview.Models.Media", null)
@@ -241,21 +177,11 @@ namespace CineReview.Migrations
                     b.Navigation("Reviews");
                 });
 
-            modelBuilder.Entity("CineReview.Models.SerieSeason", b =>
-                {
-                    b.Navigation("Episodes");
-                });
-
             modelBuilder.Entity("CineReview.Models.User", b =>
                 {
                     b.Navigation("FavoriteList");
 
                     b.Navigation("Reviews");
-                });
-
-            modelBuilder.Entity("CineReview.Models.Serie", b =>
-                {
-                    b.Navigation("Seasons");
                 });
 #pragma warning restore 612, 618
         }

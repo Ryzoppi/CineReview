@@ -109,7 +109,9 @@ namespace CineReview.Migrations
                 name: "Series",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    Seasons = table.Column<int>(type: "int", nullable: false),
+                    Episodes = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -118,52 +120,6 @@ namespace CineReview.Migrations
                         name: "FK_Series_Media_Id",
                         column: x => x.Id,
                         principalTable: "Media",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "SerieSeasons",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Title = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    SerieId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SerieSeasons", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_SerieSeasons_Series_SerieId",
-                        column: x => x.SerieId,
-                        principalTable: "Series",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "SerieEpisodes",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Title = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Description = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    SeasonId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SerieEpisodes", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_SerieEpisodes_SerieSeasons_SeasonId",
-                        column: x => x.SeasonId,
-                        principalTable: "SerieSeasons",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -178,16 +134,6 @@ namespace CineReview.Migrations
                 name: "IX_Reviews_UserId",
                 table: "Reviews",
                 column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SerieEpisodes_SeasonId",
-                table: "SerieEpisodes",
-                column: "SeasonId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SerieSeasons_SerieId",
-                table: "SerieSeasons",
-                column: "SerieId");
         }
 
         /// <inheritdoc />
@@ -198,12 +144,6 @@ namespace CineReview.Migrations
 
             migrationBuilder.DropTable(
                 name: "Reviews");
-
-            migrationBuilder.DropTable(
-                name: "SerieEpisodes");
-
-            migrationBuilder.DropTable(
-                name: "SerieSeasons");
 
             migrationBuilder.DropTable(
                 name: "Series");

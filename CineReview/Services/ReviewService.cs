@@ -17,9 +17,9 @@ namespace CineReview.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<ReviewReadDto>> GetAllAsync()
+        public async Task<IEnumerable<ReviewReadDto>> GetAllByUserAsync(int userId)
         {
-            var reviews = await _repo.GetAllAsync();
+            var reviews = await _repo.GetAllByUserAsync(userId);
             return _mapper.Map<IEnumerable<ReviewReadDto>>(reviews);
         }
 

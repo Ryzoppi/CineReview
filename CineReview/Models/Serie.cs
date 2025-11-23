@@ -2,6 +2,7 @@
 {
     public class Serie : Media
     {
-        public List<SerieSeason> Seasons { get; set; }
+        public int Seasons { get; set; }
+        public int Episodes { get; set; }
     }
 }

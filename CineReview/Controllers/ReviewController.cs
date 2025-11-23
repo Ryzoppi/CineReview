@@ -19,9 +19,9 @@ namespace CineReview.Controllers
 
         // GET: api/<ReviewController>
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get(int userId)
         {
-            var reviewReadDto = await _reviewService.GetAllAsync();
+            var reviewReadDto = await _reviewService.GetAllByUserAsync(userId);
             return Ok(reviewReadDto);
         }
 

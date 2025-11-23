@@ -11,10 +11,9 @@ namespace CineReview.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<Media> Media { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Serie> Series { get; set; }
-        public DbSet<SerieSeason> SerieSeasons { get; set; }
-        public DbSet<SerieEpisode> SerieEpisodes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
