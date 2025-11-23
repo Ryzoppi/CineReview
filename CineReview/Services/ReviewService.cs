@@ -17,9 +17,9 @@ namespace CineReview.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<ReviewReadDto>> GetAllByUserAsync(int userId)
+        public async Task<IEnumerable<ReviewReadDto>> GetAllAsync()
         {
-            var reviews = await _repo.GetAllByUserAsync(userId);
+            var reviews = await _repo.GetAllAsync();
             return _mapper.Map<IEnumerable<ReviewReadDto>>(reviews);
         }
 
@@ -55,6 +55,14 @@ namespace CineReview.Services
             if (existing == null) return false;
             _repo.Remove(existing);
             return await _repo.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<ReviewReadDto>> FilterReviewsAsync(int? grade, int? userId, int? mediaId, string? orderBy)
+        {
+            var reviews = await _repo.FilterReviewsAsync(grade, userId, mediaId, orderBy);
+            if (reviews == null) return null;
+
+            return _mapper.Map<IEnumerable<ReviewReadDto>>(reviews);
         }
     }
 }

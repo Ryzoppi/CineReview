@@ -11,5 +11,6 @@ namespace CineReview.Services.Interfaces
         Task<MovieReadDto> CreateAsync(MovieCreateDto dto);
         Task<MovieReadDto> UpdateAsync(int id, MovieCreateDto dto);
         Task<bool> DeleteAsync(int id);
+        Task<IEnumerable<MovieReadDto>> FilterMoviesAsync(string? name, string? synopsis, string? director, int? releaseYear, int? duration, string? orderBy);
     }
 }

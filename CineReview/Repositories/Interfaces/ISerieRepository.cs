@@ -12,5 +12,6 @@ namespace CineReview.Repositories.Interfaces
         void Update(Serie serie);
         void Remove(Serie serie);
         Task<bool> SaveChangesAsync();
+        Task<IEnumerable<Serie>> FilterSeriesAsync(string? name, string? synopsis, string? director, int? releaseYear, int? seasons, int? episodes, string? orderBy);
     }
 }

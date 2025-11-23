@@ -67,9 +67,6 @@ namespace CineReview.Migrations
                     b.Property<int>("Grade")
                         .HasColumnType("int");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
                     b.HasKey("MediaId", "UserId");
 
                     b.HasIndex("UserId");

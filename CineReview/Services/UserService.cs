@@ -79,5 +79,22 @@ namespace CineReview.Services
 
             return _mapper.Map<MediaReadDto>(media);
         }
+
+        public async Task<IEnumerable<UserReadDto>> FilterUsersAsync(string? name, string? email, string? orderBy)
+        {
+            var users = await _repo.FilterUsersAsync(name, email, orderBy);
+            if (users == null) return null;
+
+            return _mapper.Map<IEnumerable<UserReadDto>>(users);
+        }
+
+        public async Task<IEnumerable<MediaReadDto>> FilterFavoritesAsync(int id, string? name, string? synopsis, string? director, int? releaseYear, string? orderBy)
+        {
+            var favorites = await _repo.FilterFavoritesAsync(id, name, synopsis, director, releaseYear, orderBy);
+            if (favorites == null) return null;
+
+            return _mapper.Map<IEnumerable<MediaReadDto>>(favorites);
+
+        }
     }
 }

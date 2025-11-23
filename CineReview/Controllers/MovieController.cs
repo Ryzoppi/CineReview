@@ -1,4 +1,5 @@
 ﻿using CineReview.DTOs;
+using CineReview.Services;
 using CineReview.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -94,6 +95,19 @@ namespace CineReview.Controllers
             }
 
             return Ok(new { Message = $"Filme com Id={id} removida com sucesso." });
+        }
+
+        // GET api/<MovieController>/filters
+        [HttpGet("filters")]
+        public async Task<IActionResult> FilterMovies(string? name, string? synopsis, string? director, int? releaseYear, int? duration, string? orderBy)
+        {
+            var movieReadDto = await _movieService.FilterMoviesAsync(name, synopsis, director, releaseYear, duration, orderBy);
+            if (movieReadDto == null)
+            {
+                return NotFound(new { Message = "Filme não encontrado." });
+            }
+
+            return Ok(movieReadDto);
         }
     }
 }

@@ -96,12 +96,14 @@ namespace CineReview.Controllers
             return Ok(new { Message = $"Usuário com Id={id} removida com sucesso." });
         }
 
+        // GET api/<UserController>/5/favorites
         [HttpGet("{id}/favorites")]
         public async Task<IActionResult> GetFavorites(int id) {
             var mediaReadDto = await _userService.GetAllFavoritesAsync(id);
             return Ok(mediaReadDto);
         }
 
+        // POST api/<UserController>/5/favorites/5
         [HttpPost("{id}/favorites/{mediaId}")]
         public async Task<IActionResult> AddFavorite(int id, int mediaId)
         {
@@ -114,6 +116,7 @@ namespace CineReview.Controllers
             return Ok(new { Message = "Mídia adicionado a lista de favoritos com sucesso." });
         }
 
+        // DELETE api/<UserController>/5/favorites/5
         [HttpDelete("{id}/favorites/{mediaId}")]
         public async Task<IActionResult> RemoveFavorite(int id, int mediaId)
         {
@@ -124,6 +127,32 @@ namespace CineReview.Controllers
             }
 
             return Ok(new { Message = "Mídia removida a lista de favoritos com sucesso." });
+        }
+
+        // GET api/<UserController>/filters
+        [HttpGet("filters")]
+        public async Task<IActionResult> FilterUsers(string? name, string? email, string? orderBy)
+        {
+            var userReadDto = await _userService.FilterUsersAsync(name, email, orderBy);
+            if (userReadDto == null)
+            {
+                return NotFound(new { Message = "Usuário não encontrado." });
+            }
+
+            return Ok(userReadDto);
+        }
+
+        // GET api/<UserController>/favorites/filters
+        [HttpGet("{id}/favorites/filters")]
+        public async Task<IActionResult> FilterFavorites(int id, string? name, string? synopsis, string? director, int? releaseYear, string? orderBy)
+        {
+            var userReadDto = await _userService.FilterFavoritesAsync(id, name, synopsis, director, releaseYear, orderBy);
+            if (userReadDto == null)
+            {
+                return NotFound(new { Message = "Mídia não encontrado." });
+            }
+
+            return Ok(userReadDto);
         }
     }
 }

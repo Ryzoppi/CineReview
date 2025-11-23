@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CineReview.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20251123003732_initial")]
+    [Migration("20251123020326_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -68,9 +68,6 @@ namespace CineReview.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("Grade")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Id")
                         .HasColumnType("int");
 
                     b.HasKey("MediaId", "UserId");

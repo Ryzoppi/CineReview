@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using CineReview.Data;
+﻿using CineReview.Data;
 using CineReview.Models;
 using CineReview.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace CineReview.Repositories
 {
@@ -23,6 +23,7 @@ namespace CineReview.Repositories
         public void Remove(User user) => _ctx.Users.Remove(user);
 
         public async Task<bool> SaveChangesAsync() => (await _ctx.SaveChangesAsync()) > 0;
+
         public async Task<IEnumerable<Media>> GetAllFavoritesAsync(int userId)
         {
             var user = await _ctx.Users
@@ -56,7 +57,7 @@ namespace CineReview.Repositories
 
             if (user == null) return null;
 
-            var media = user.FavoriteList.FirstOrDefault(m => m.Id == mediaId);
+            var media = user.FavoriteList.FirstOrDefault(u => u.Id == mediaId);
 
             if (media != null)
             {
@@ -66,6 +67,62 @@ namespace CineReview.Repositories
 
             return media;
         }
+
+        public async Task<IEnumerable<User>> FilterUsersAsync(string? name, string? email, string? orderBy)
+        {
+            IQueryable<User> query = _ctx.Users;
+
+            if (!string.IsNullOrEmpty(name))
+                query = query.Where(u => u.Name.Contains(name));
+
+            if (!string.IsNullOrEmpty(email))
+                query = query.Where(u => u.Email.Contains(email));
+
+            query = orderBy?.ToLower() switch
+            {
+                "name" => query.OrderBy(u => u.Name),
+                "name_desc" => query.OrderByDescending(u => u.Name),
+
+                _ => query.OrderBy(u => u.Id)
+            };
+
+            return await query.ToListAsync();
+        }
+
+        public async Task<IEnumerable<Media>> FilterFavoritesAsync(int id, string? name, string? synopsis, string? director, int? releaseYear, string? orderBy)
+        {
+            IQueryable<Media> query = _ctx.Users.Where(u => u.Id == id).SelectMany(u => u.FavoriteList).AsQueryable();
+
+            if (!string.IsNullOrEmpty(name))
+                query = query.Where(m => m.Name.Contains(name));
+
+            if (!string.IsNullOrEmpty(synopsis))
+                query = query.Where(m => m.Synopsis.Contains(synopsis));
+
+            if (!string.IsNullOrEmpty(director))
+                query = query.Where(m => m.Director.Contains(director));
+
+            if (releaseYear.HasValue)
+                query = query.Where(m => m.ReleaseYear == releaseYear);
+
+            query = orderBy?.ToLower() switch
+            {
+                "name" => query.OrderBy(m => m.Name),
+                "name_desc" => query.OrderByDescending(m => m.Name),
+
+                "synopsis" => query.OrderBy(m => m.Synopsis),
+                "synopsis_desc" => query.OrderByDescending(m => m.Synopsis),
+
+                "director" => query.OrderBy(m => m.Director),
+                "director_desc" => query.OrderByDescending(m => m.Director),
+
+                "release_year" => query.OrderBy(m => m.ReleaseYear),
+                "release_year_desc" => query.OrderByDescending(m => m.ReleaseYear),
+
+                _ => query.OrderBy(u => u.Id)
+            };
+
+            return await query.ToListAsync();
+        }
     }
 }
-

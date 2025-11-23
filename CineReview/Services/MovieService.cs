@@ -56,5 +56,13 @@ namespace CineReview.Services
             _repo.Remove(existing);
             return await _repo.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<MovieReadDto>> FilterMoviesAsync(string? name, string? synopsis, string? director, int? releaseYear, int? duration, string? orderBy)
+        {
+            var movies = await _repo.FilterMoviesAsync(name, synopsis, director, releaseYear, duration, orderBy);
+            if (movies == null) return null;
+
+            return _mapper.Map<IEnumerable<MovieReadDto>>(movies);
+        }
     }
 }

@@ -25,6 +25,54 @@ namespace CineReview.Repositories
         public void Remove(Serie serie) => _ctx.Series.Remove(serie);
 
         public async Task<bool> SaveChangesAsync() => (await _ctx.SaveChangesAsync()) > 0;
+
+        public async Task<IEnumerable<Serie>> FilterSeriesAsync(string? name, string? synopsis, string? director, int? releaseYear, int? seasons, int? episodes, string? orderBy)
+        {
+            IQueryable<Serie> query = _ctx.Series;
+
+            if (!string.IsNullOrEmpty(name))
+                query = query.Where(s => s.Name.Contains(name));
+
+            if (!string.IsNullOrEmpty(synopsis))
+                query = query.Where(s => s.Synopsis.Contains(synopsis));
+
+            if (!string.IsNullOrEmpty(director))
+                query = query.Where(s => s.Director.Contains(director));
+
+            if (releaseYear.HasValue)
+                query = query.Where(s => s.ReleaseYear == releaseYear);
+
+            if (seasons.HasValue)
+                query = query.Where(s => s.Seasons == seasons);
+
+            if (episodes.HasValue)
+                query = query.Where(s => s.Episodes == episodes);
+
+            query = orderBy?.ToLower() switch
+            {
+                "name" => query.OrderBy(s => s.Name),
+                "name_desc" => query.OrderByDescending(s => s.Name),
+
+                "synopsis" => query.OrderBy(s => s.Synopsis),
+                "synopsis_desc" => query.OrderByDescending(s => s.Synopsis),
+
+                "director" => query.OrderBy(s => s.Director),
+                "director_desc" => query.OrderByDescending(s => s.Director),
+
+                "release_year" => query.OrderBy(s => s.ReleaseYear),
+                "release_year_desc" => query.OrderByDescending(s => s.ReleaseYear),
+
+                "seasons" => query.OrderBy(s => s.Seasons),
+                "seasons_desc" => query.OrderByDescending(s => s.Seasons),
+
+                "episodes" => query.OrderBy(s => s.Episodes),
+                "episodes_desc" => query.OrderByDescending(s => s.Episodes),
+
+                _ => query.OrderBy(s => s.Id)
+            };
+
+            return await query.ToListAsync();
+        }
     }
 }
 

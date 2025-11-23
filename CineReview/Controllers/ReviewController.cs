@@ -1,4 +1,5 @@
 ﻿using CineReview.DTOs;
+using CineReview.Services;
 using CineReview.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,9 +20,9 @@ namespace CineReview.Controllers
 
         // GET: api/<ReviewController>
         [HttpGet]
-        public async Task<IActionResult> Get(int userId)
+        public async Task<IActionResult> Get()
         {
-            var reviewReadDto = await _reviewService.GetAllByUserAsync(userId);
+            var reviewReadDto = await _reviewService.GetAllAsync();
             return Ok(reviewReadDto);
         }
 
@@ -52,7 +53,7 @@ namespace CineReview.Controllers
                 return StatusCode(500, "Erro ao criar a review no banco de dados.");
             }
 
-            return CreatedAtAction(nameof(GetById), new { id = reviewReadDto.Id }, reviewReadDto);
+            return CreatedAtAction(nameof(GetById), new { userId = reviewReadDto.UserId }, reviewReadDto);
         }
 
         // PUT api/<ReviewController>/5
@@ -94,6 +95,19 @@ namespace CineReview.Controllers
             }
 
             return Ok(new { Message = $"Review com Id={id} removida com sucesso." });
+        }
+
+        // GET api/<ReviewController>/filters
+        [HttpGet("filters")]
+        public async Task<IActionResult> FilterReviews(int? grade, int? userId, int? mediaId, string? orderBy)
+        {
+            var reviewReadDto = await _reviewService.FilterReviewsAsync(grade, userId, mediaId, orderBy);
+            if (reviewReadDto == null)
+            {
+                return NotFound(new { Message = "Review não encontrada." });
+            }
+
+            return Ok(reviewReadDto);
         }
     }
 }

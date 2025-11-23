@@ -1,4 +1,5 @@
 ﻿using CineReview.DTOs;
+using CineReview.Services;
 using CineReview.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -94,6 +95,19 @@ namespace CineReview.Controllers
             }
 
             return Ok(new { Message = $"Série com Id={id} removida com sucesso." });
+        }
+
+        // GET api/<SerieController>/filters
+        [HttpGet("filters")]
+        public async Task<IActionResult> FilterSeries(string? name, string? synopsis, string? director, int? releaseYear, int? seasons, int? episodes, string? orderBy)
+        {
+            var serieReadDto = await _serieService.FilterSeriesAsync(name, synopsis, director, releaseYear, seasons, episodes, orderBy);
+            if (serieReadDto == null)
+            {
+                return NotFound(new { Message = "Série não encontrada." });
+            }
+
+            return Ok(serieReadDto);
         }
     }
 }

@@ -84,7 +84,6 @@ namespace CineReview.Migrations
                 {
                     UserId = table.Column<int>(type: "int", nullable: false),
                     MediaId = table.Column<int>(type: "int", nullable: false),
-                    Id = table.Column<int>(type: "int", nullable: false),
                     Grade = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

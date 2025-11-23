@@ -13,5 +13,7 @@ namespace CineReview.Repositories.Interfaces
         Task<IEnumerable<Media>> GetAllFavoritesAsync(int id);
         Task<Media> AddToFavoritesAsync(int id, int mediaId);
         Task<Media> RemoveFromFavoritesAsync(int id, int mediaId);
+        Task<IEnumerable<User>> FilterUsersAsync(string? name, string? email, string? orderBy);
+        Task<IEnumerable<Media>> FilterFavoritesAsync(int id, string? name, string? synopsis, string? director, int? releaseYear, string? orderBy);
     }
 }
