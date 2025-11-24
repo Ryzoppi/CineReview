@@ -33,10 +33,17 @@ namespace CineReview.Services
         public async Task<ReviewReadDto> CreateAsync(ReviewCreateDto dto)
         {
             var review = _mapper.Map<Review>(dto);
+
             await _repo.AddAsync(review);
-            if (!await _repo.SaveChangesAsync()) return null;
-            return _mapper.Map<ReviewReadDto>(review);
+            if (!await _repo.SaveChangesAsync())
+                return null;
+
+            // Recarrega com User e Media incluídos
+            var reviewLoaded = await _repo.GetByIdAsync(review.Id);
+
+            return _mapper.Map<ReviewReadDto>(reviewLoaded);
         }
+
 
         public async Task<ReviewReadDto> UpdateAsync(int id, ReviewCreateDto dto)
         {

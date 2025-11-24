@@ -3,80 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\services\\serieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\services\\serieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\services\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\services\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\services\\interfaces\\iserieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\services\\interfaces\\iserieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\services\\interfaces\\imovieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\services\\interfaces\\imovieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\repositories\\interfaces\\imovierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\repositories\\interfaces\\imovierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\repositories\\movierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\repositories\\movierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\services\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\services\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\repositories\\reviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\repositories\\reviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Migrations\\20251124184401_Inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CineReview\\Migrations\\20251124184401_Inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Migrations\\20251124183321_FixReviewId.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CineReview\\Migrations\\20251124183321_FixReviewId.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Migrations\\20251124182720_ALteracoesReview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CineReview\\Migrations\\20251124182720_ALteracoesReview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\repositories\\interfaces\\ireviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\repositories\\interfaces\\ireviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\repositories\\interfaces\\iserierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\repositories\\interfaces\\iserierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\repositories\\serierepostory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\repositories\\serierepostory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\mapping\\auomapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\mapping\\auomapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\dtos\\moviecreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\dtos\\moviecreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\dtos\\seriereaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\dtos\\seriereaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\dtos\\moviereaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\dtos\\moviereaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\dtos\\seriecreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\dtos\\seriecreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\models\\serie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\models\\serie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\dtos\\reviewreaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\dtos\\reviewreaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\dtos\\reviewcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\dtos\\reviewcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -87,16 +39,20 @@
       "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\models\\serie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\models\\serie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\controllers\\seriecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\controllers\\seriecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\models\\media.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\models\\media.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|c:\\users\\guilherme\\onedrive\\documentos\\cinereview\\cinereview\\controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F33D3E37-12DB-4AA1-971D-6F85EAEC3C21}|CineReview\\CineReview.csproj|solutionrelative:cinereview\\controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -106,281 +62,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SerieService.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Services\\SerieService.cs",
-              "RelativeDocumentMoniker": "CineReview\\Services\\SerieService.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Services\\SerieService.cs",
-              "RelativeToolTip": "CineReview\\Services\\SerieService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAYwBEAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T19:43:05.57Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ISerieService.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Services\\Interfaces\\ISerieService.cs",
-              "RelativeDocumentMoniker": "CineReview\\Services\\Interfaces\\ISerieService.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Services\\Interfaces\\ISerieService.cs",
-              "RelativeToolTip": "CineReview\\Services\\Interfaces\\ISerieService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T19:42:05.469Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MovieService.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Services\\MovieService.cs",
-              "RelativeDocumentMoniker": "CineReview\\Services\\MovieService.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Services\\MovieService.cs",
-              "RelativeToolTip": "CineReview\\Services\\MovieService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T19:40:13.337Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IMovieRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Repositories\\Interfaces\\IMovieRepository.cs",
-              "RelativeDocumentMoniker": "CineReview\\Repositories\\Interfaces\\IMovieRepository.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Repositories\\Interfaces\\IMovieRepository.cs",
-              "RelativeToolTip": "CineReview\\Repositories\\Interfaces\\IMovieRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T19:20:54.507Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IMovieService.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Services\\Interfaces\\IMovieService.cs",
-              "RelativeDocumentMoniker": "CineReview\\Services\\Interfaces\\IMovieService.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Services\\Interfaces\\IMovieService.cs",
-              "RelativeToolTip": "CineReview\\Services\\Interfaces\\IMovieService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T19:38:17.736Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MovieRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Repositories\\MovieRepository.cs",
-              "RelativeDocumentMoniker": "CineReview\\Repositories\\MovieRepository.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Repositories\\MovieRepository.cs",
-              "RelativeToolTip": "CineReview\\Repositories\\MovieRepository.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T19:25:39.499Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ReviewRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Repositories\\ReviewRepository.cs",
-              "RelativeDocumentMoniker": "CineReview\\Repositories\\ReviewRepository.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Repositories\\ReviewRepository.cs",
-              "RelativeToolTip": "CineReview\\Repositories\\ReviewRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T19:35:36.273Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IReviewRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Repositories\\Interfaces\\IReviewRepository.cs",
-              "RelativeDocumentMoniker": "CineReview\\Repositories\\Interfaces\\IReviewRepository.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Repositories\\Interfaces\\IReviewRepository.cs",
-              "RelativeToolTip": "CineReview\\Repositories\\Interfaces\\IReviewRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T19:34:16.413Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ISerieRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Repositories\\Interfaces\\ISerieRepository.cs",
-              "RelativeDocumentMoniker": "CineReview\\Repositories\\Interfaces\\ISerieRepository.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Repositories\\Interfaces\\ISerieRepository.cs",
-              "RelativeToolTip": "CineReview\\Repositories\\Interfaces\\ISerieRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T19:27:22.741Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "SerieRepostory.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Repositories\\SerieRepostory.cs",
-              "RelativeDocumentMoniker": "CineReview\\Repositories\\SerieRepostory.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Repositories\\SerieRepostory.cs",
-              "RelativeToolTip": "CineReview\\Repositories\\SerieRepostory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T19:28:57.321Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AuoMapperProfile.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Mapping\\AuoMapperProfile.cs",
-              "RelativeDocumentMoniker": "CineReview\\Mapping\\AuoMapperProfile.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Mapping\\AuoMapperProfile.cs",
-              "RelativeToolTip": "CineReview\\Mapping\\AuoMapperProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T18:29:21.523Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "SerieReadDto.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\DTOs\\SerieReadDto.cs",
-              "RelativeDocumentMoniker": "CineReview\\DTOs\\SerieReadDto.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\DTOs\\SerieReadDto.cs",
-              "RelativeToolTip": "CineReview\\DTOs\\SerieReadDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T18:27:25.99Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "SerieCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\DTOs\\SerieCreateDto.cs",
-              "RelativeDocumentMoniker": "CineReview\\DTOs\\SerieCreateDto.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\DTOs\\SerieCreateDto.cs",
-              "RelativeToolTip": "CineReview\\DTOs\\SerieCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T18:26:12.89Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Program.cs",
-              "RelativeDocumentMoniker": "CineReview\\Program.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Program.cs",
-              "RelativeToolTip": "CineReview\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T22:52:53.582Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "MovieCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\DTOs\\MovieCreateDto.cs",
-              "RelativeDocumentMoniker": "CineReview\\DTOs\\MovieCreateDto.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\DTOs\\MovieCreateDto.cs",
-              "RelativeToolTip": "CineReview\\DTOs\\MovieCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T18:18:36.255Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Serie.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Models\\Serie.cs",
-              "RelativeDocumentMoniker": "CineReview\\Models\\Serie.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Models\\Serie.cs",
-              "RelativeToolTip": "CineReview\\Models\\Serie.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T16:55:58.383Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "MovieReadDto.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\DTOs\\MovieReadDto.cs",
-              "RelativeDocumentMoniker": "CineReview\\DTOs\\MovieReadDto.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\DTOs\\MovieReadDto.cs",
-              "RelativeToolTip": "CineReview\\DTOs\\MovieReadDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T18:22:37.564Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ReviewReadDto.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\DTOs\\ReviewReadDto.cs",
-              "RelativeDocumentMoniker": "CineReview\\DTOs\\ReviewReadDto.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\DTOs\\ReviewReadDto.cs",
-              "RelativeToolTip": "CineReview\\DTOs\\ReviewReadDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T18:24:06.78Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ReviewCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\DTOs\\ReviewCreateDto.cs",
-              "RelativeDocumentMoniker": "CineReview\\DTOs\\ReviewCreateDto.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\DTOs\\ReviewCreateDto.cs",
-              "RelativeToolTip": "CineReview\\DTOs\\ReviewCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T18:23:42.333Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Review.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Models\\Review.cs",
-              "RelativeDocumentMoniker": "CineReview\\Models\\Review.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Models\\Review.cs",
-              "RelativeToolTip": "CineReview\\Models\\Review.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T17:19:56.151Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ReviewController.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Controllers\\ReviewController.cs",
-              "RelativeDocumentMoniker": "CineReview\\Controllers\\ReviewController.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Controllers\\ReviewController.cs",
-              "RelativeToolTip": "CineReview\\Controllers\\ReviewController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T17:15:08.107Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -391,33 +74,163 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 0,
+              "Title": "ReviewService.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Services\\ReviewService.cs",
+              "RelativeDocumentMoniker": "CineReview\\Services\\ReviewService.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Services\\ReviewService.cs",
+              "RelativeToolTip": "CineReview\\Services\\ReviewService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAYwCsAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T19:13:58.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20251124184401_Inicial.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Migrations\\20251124184401_Inicial.cs",
+              "RelativeDocumentMoniker": "CineReview\\Migrations\\20251124184401_Inicial.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Migrations\\20251124184401_Inicial.cs",
+              "RelativeToolTip": "CineReview\\Migrations\\20251124184401_Inicial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T18:44:01.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "CineReview\\Data\\DataContext.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Data\\DataContext.cs",
+              "RelativeToolTip": "CineReview\\Data\\DataContext.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAYwBIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T18:32:13.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ReviewRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Repositories\\ReviewRepository.cs",
+              "RelativeDocumentMoniker": "CineReview\\Repositories\\ReviewRepository.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Repositories\\ReviewRepository.cs",
+              "RelativeToolTip": "CineReview\\Repositories\\ReviewRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T18:16:39.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20251124183321_FixReviewId.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Migrations\\20251124183321_FixReviewId.cs",
+              "RelativeDocumentMoniker": "CineReview\\Migrations\\20251124183321_FixReviewId.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Migrations\\20251124183321_FixReviewId.cs",
+              "RelativeToolTip": "CineReview\\Migrations\\20251124183321_FixReviewId.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T18:33:21.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20251124182720_ALteracoesReview.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Migrations\\20251124182720_ALteracoesReview.cs",
+              "RelativeDocumentMoniker": "CineReview\\Migrations\\20251124182720_ALteracoesReview.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Migrations\\20251124182720_ALteracoesReview.cs",
+              "RelativeToolTip": "CineReview\\Migrations\\20251124182720_ALteracoesReview.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T18:27:21.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IReviewRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Repositories\\Interfaces\\IReviewRepository.cs",
+              "RelativeDocumentMoniker": "CineReview\\Repositories\\Interfaces\\IReviewRepository.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Repositories\\Interfaces\\IReviewRepository.cs",
+              "RelativeToolTip": "CineReview\\Repositories\\Interfaces\\IReviewRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T18:16:31.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ReviewController.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Controllers\\ReviewController.cs",
+              "RelativeDocumentMoniker": "CineReview\\Controllers\\ReviewController.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Controllers\\ReviewController.cs",
+              "RelativeToolTip": "CineReview\\Controllers\\ReviewController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAiwDcAAABmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T17:15:08.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Serie.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Models\\Serie.cs",
+              "RelativeDocumentMoniker": "CineReview\\Models\\Serie.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Models\\Serie.cs",
+              "RelativeToolTip": "CineReview\\Models\\Serie.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T16:55:58.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Review.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Models\\Review.cs",
+              "RelativeDocumentMoniker": "CineReview\\Models\\Review.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Models\\Review.cs",
+              "RelativeToolTip": "CineReview\\Models\\Review.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T17:19:56.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "SerieController.cs",
               "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Controllers\\SerieController.cs",
               "RelativeDocumentMoniker": "CineReview\\Controllers\\SerieController.cs",
               "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Controllers\\SerieController.cs",
               "RelativeToolTip": "CineReview\\Controllers\\SerieController.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAA6wFoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAYwFoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-21T16:52:22.687Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 12,
               "Title": "MovieController.cs",
               "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Controllers\\MovieController.cs",
               "RelativeDocumentMoniker": "CineReview\\Controllers\\MovieController.cs",
               "ToolTip": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Controllers\\MovieController.cs",
               "RelativeToolTip": "CineReview\\Controllers\\MovieController.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAAAFQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAowFQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-21T16:56:33.632Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 11,
               "Title": "Media.cs",
               "DocumentMoniker": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\Models\\Media.cs",
               "RelativeDocumentMoniker": "CineReview\\Models\\Media.cs",

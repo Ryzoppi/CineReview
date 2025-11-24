@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CineReview.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20251123020326_initial")]
-    partial class initial
+    [Migration("20251124184401_Inicial")]
+    partial class Inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,16 +61,24 @@ namespace CineReview.Migrations
 
             modelBuilder.Entity("CineReview.Models.Review", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Grade")
+                        .HasColumnType("int");
+
                     b.Property<int>("MediaId")
                         .HasColumnType("int");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Grade")
-                        .HasColumnType("int");
+                    b.HasKey("Id");
 
-                    b.HasKey("MediaId", "UserId");
+                    b.HasIndex("MediaId");
 
                     b.HasIndex("UserId");
 

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hugo\\source\\repos\\CineReview\\CineReview\\CineReview.csproj": {}
+    "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\CineReview.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hugo\\source\\repos\\CineReview\\CineReview\\CineReview.csproj": {
+    "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\CineReview.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hugo\\source\\repos\\CineReview\\CineReview\\CineReview.csproj",
+        "projectUniqueName": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\CineReview.csproj",
         "projectName": "CineReview",
-        "projectPath": "C:\\Users\\Hugo\\source\\repos\\CineReview\\CineReview\\CineReview.csproj",
-        "packagesPath": "C:\\Users\\Hugo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hugo\\source\\repos\\CineReview\\CineReview\\obj\\",
+        "projectPath": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\CineReview.csproj",
+        "packagesPath": "C:\\Users\\Guilherme\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Guilherme\\OneDrive\\Documentos\\CineReview\\CineReview\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Hugo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Guilherme\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -102,7 +106,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

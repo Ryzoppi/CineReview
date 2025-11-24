@@ -53,7 +53,7 @@ namespace CineReview.Controllers
                 return StatusCode(500, "Erro ao criar a review no banco de dados.");
             }
 
-            return CreatedAtAction(nameof(GetById), new { userId = reviewReadDto.UserId }, reviewReadDto);
+            return CreatedAtAction(nameof(GetById), new { id = reviewReadDto.UserId }, reviewReadDto);
         }
 
         // PUT api/<ReviewController>/5

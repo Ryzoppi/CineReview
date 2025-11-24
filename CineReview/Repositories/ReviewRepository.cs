@@ -12,10 +12,14 @@ namespace CineReview.Repositories
 
         public async Task<IEnumerable<Review>> GetAllAsync()
         => await _ctx.Reviews.Include(r => r.User).Include(r => r.Media).ToListAsync();
-        
 
         public async Task<Review> GetByIdAsync(int id)
-            => await _ctx.Reviews.FindAsync(id);
+        {
+            return await _ctx.Reviews
+                .Include(r => r.User)
+                .Include(r => r.Media)
+                .FirstOrDefaultAsync(r => r.Id == id);
+        }
 
         public async Task AddAsync(Review reviews) => await _ctx.Reviews.AddAsync(reviews);
 

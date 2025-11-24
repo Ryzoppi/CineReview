@@ -33,6 +33,13 @@ namespace CineReview.Data
                         .HasOne(ac => ac.User)
                         .WithMany(c => c.Reviews)
                         .HasForeignKey(ac => ac.UserId);
+            modelBuilder.Entity<Review>()
+                .HasKey(r => r.Id);
+
+            modelBuilder.Entity<Review>()
+                .Property(r => r.Id)
+                .ValueGeneratedOnAdd();
+
         }
     }
 }
